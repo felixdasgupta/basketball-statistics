@@ -1,0 +1,36 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  output = "../node_modules/.prisma/client"
+  previewFeatures = ["driverAdapters"]
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("POSTGRES_PRISMA_URL") // uses connection pooling
+  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+}
+
+model Players {
+  id            Int      @id
+  first_name    String
+  last_name     String   
+  position      String
+  jersey_number String
+  team          Team     @relation(fields: [teamId], references: [id])
+  teamId        Int      
+
+  @@map("players")
+}
+
+model Team {
+  id            Int      @id
+  name          String
+  full_name     String
+  abbreviation  String
+  players       Players[]
+
+  @@map("teams")
+}

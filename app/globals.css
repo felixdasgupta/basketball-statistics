@@ -1,0 +1,58 @@
+:root {
+	--foreground-rgb: 0, 0, 0;
+}
+
+body {
+	color: rgb(var(--foreground-rgb));
+	margin: 0;
+	padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	font-family: var(--font-roboto-mono);
+	font-weight: 300;
+	line-height: 1.5em;
+}
+
+p,
+div,
+ul,
+li,
+input,
+textarea,
+select,
+option,
+label,
+form,
+fieldset,
+legend,
+table,
+thead,
+tbody,
+tfoot,
+tr,
+td,
+blockquote,
+pre,
+code,
+em,
+small,
+sub,
+span {
+	margin: 0;
+	font-family: var(--font-roboto-mono);
+	font-weight: 200;
+}
+
+a,
+button,
+th,
+strong {
+	font-weight: 500;
+}
